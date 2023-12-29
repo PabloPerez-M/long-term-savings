@@ -1,6 +1,6 @@
-import path from "path";
+const path = require ("path");
 // import { Configuration } from "webpack";
-import CopyWebpackPlugin from "copy-webpack-plugin";
+const CopyWebpackPlugin = require ("copy-webpack-plugin");
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config /*: Configuration */ = {
@@ -41,4 +41,4 @@ const config /*: Configuration */ = {
   },
 };
 
-export default config;
+module.exports = config;
