@@ -68,21 +68,21 @@ const Range: React.FC = () => {
   return (
     <div className="container">
       <div className="typeContainer">
-        <label htmlFor="typePerformance">
+        <label htmlFor="typeMonetaryReturn">
           Tipo de deposito: {" "}
         </label>
-        <select id="typePermorfance" onChange={typeChange} value={typeDeposit}>
+        <select id="typeMonetaryReturn" onChange={typeChange} value={typeDeposit}>
           <option value="month">Cada mes</option>
           <option value="only">Unica vez</option>
         </select>
       </div>
       <div className="rangeContainer">
-        <label className="labelMonto">Monto: </label>
+        <label className="labelAmount">Monto: </label>
         <div className="infRangeCont">
-          <div className="monto">
+          <div className="divAmount">
             <label id="amount">${amount}</label>
           </div>
-          <div className="maxi">
+          <div className="divMax">
             <label id="max">$23000</label>
           </div>
         </div>
@@ -110,7 +110,7 @@ const Range: React.FC = () => {
 
       <div className="dataContainer">
         <p id="deposit">Tu deposito: ${String(opeDep(amount))}</p>
-        <p id="performance">
+        <p id="monetaryReturn">
           Rendimientos acumulados: ${String(accRen().toFixed(2))}
         </p>
         <p id="total">

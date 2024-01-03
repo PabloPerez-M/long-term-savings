@@ -41,7 +41,7 @@
     margin: 10px;
 }
 
-#typePermorfance {
+#typeMonetaryReturn {
     border-radius: 10px;
     border: 1.5px solid rgb(106, 84, 125);
     background-color: rgba(196, 148, 241, 0.606);
@@ -74,15 +74,15 @@ option {
     margin: 0 5px;
 }
 
-.labelMonto {
+.labelAmount {
     margin: 0 5px;
 }
 
-.monto {
+.divAmount {
     width: 40%;
 }
 
-.maxi {
+.divMax {
 
     width: 30%;
     display: flex;
