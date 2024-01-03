@@ -1,5 +1,9 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
 .main {
-    background-color: rgba(77, 1, 148, 0.506);
+    background-color: rgba(77, 1, 148, 0.825);
     height: 80vh;
     width: 100%;
     display: flex;
