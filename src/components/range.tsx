@@ -65,16 +65,11 @@ const Range: React.FC = () => {
     console.log(typeDeposit);
   }, [typeDeposit]);
 
-  // const verificatedType = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //     let typePerformance = document.getElementById('typePerformance');
-  //     const newTypePerformance = event.target.value
-  // }
-
   return (
     <div className="container">
       <div className="typeContainer">
         <label htmlFor="typePerformance">
-          Selecciona el tipo de deposito que haras:{" "}
+          Tipo de deposito: {" "}
         </label>
         <select id="typePermorfance" onChange={typeChange} value={typeDeposit}>
           <option value="month">Cada mes</option>
