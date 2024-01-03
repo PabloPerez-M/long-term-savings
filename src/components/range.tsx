@@ -23,10 +23,10 @@ const Range: React.FC = () => {
   const operation = (amount: number) => {
     let n: number = 0;
     let r: number = 0;
-    let result:number = 0;
-    let rate: number = 0.1398/360;
+    let result: number = 0;
+    let rate: number = 0.1398 / 360;
     if (typeDeposit === "month") {
-    for (let i = 0; i < (360 * time); i++) {
+      for (let i = 0; i < 360 * time; i++) {
         if (i % 30 === 0) {
           n = n + amount;
         }
@@ -36,13 +36,13 @@ const Range: React.FC = () => {
       }
     } else {
       let onlyDeposit: number = amount;
-      for (let i=0; i<time; i++){
-        r = (onlyDeposit * 0.15); 
+      for (let i = 0; i < time; i++) {
+        r = onlyDeposit * 0.15;
         onlyDeposit = onlyDeposit + r;
       }
-      result = onlyDeposit
+      result = onlyDeposit;
     }
-    return result
+    return result;
   };
 
   const opeDep = (amount: number) => {
@@ -71,44 +71,57 @@ const Range: React.FC = () => {
   // }
 
   return (
-    <div>
-      <label htmlFor="typePerformance">
-        Selecciona el tipo de depositos que haras:{" "}
-      </label>
-      <select id="typePermorfance" onChange={typeChange} value={typeDeposit}>
-        <option value="month">Cada mes</option>
-        <option value="only">Unica vez</option>
-      </select>
-      <br />
-      <br />
-      <label id="amount">Monto: ${amount}</label>
-      <br />
-      <label id="min">$500</label>
-      <output id="outVal" className="outVal"></output>
-      <input
-        id="range"
-        type="range"
-        min="500"
-        max="23000"
-        step="500"
-        onChange={handleChange}
-      />
-      <label id="max">$23000</label>
-      <br />
-      <label htmlFor="selectYears">Tiem1po: </label>
-      <select id="selectYears" onChange={timeChange} value={time}>
-        <option value={1}>1 año</option>
-        <option value={2}>2 años</option>
-        <option value={5}>5 años</option>
-      </select>
-      <br />
-      <p id="deposit">Tu deposito: ${String(opeDep(amount))}</p>
-      <p id="performance">
-        Rendimientos acumulados: ${String(accRen().toFixed(2))}
-      </p>
-      <p id="total">
-        Al finalizar tendras: ${String(operation(amount)?.toFixed(2))}
-      </p>
+    <div className="container">
+      <div className="typeContainer">
+        <label htmlFor="typePerformance">
+          Selecciona el tipo de deposito que haras:{" "}
+        </label>
+        <select id="typePermorfance" onChange={typeChange} value={typeDeposit}>
+          <option value="month">Cada mes</option>
+          <option value="only">Unica vez</option>
+        </select>
+      </div>
+      <div className="rangeContainer">
+        <label className="labelMonto">Monto: </label>
+        <div className="infRangeCont">
+          <div className="monto">
+            <label id="amount">${amount}</label>
+          </div>
+          <div className="maxi">
+            <label id="max">$23000</label>
+          </div>
+        </div>
+        <div>
+          <input
+            id="range"
+            type="range"
+            min="500"
+            max="23000"
+            step="500"
+            onChange={handleChange}
+          />
+        </div>
+      </div>
+
+
+      <div className="timeContainer">
+        <label htmlFor="selectYears">Tiempo: </label>
+        <select id="selectYears" onChange={timeChange} value={time}>
+          <option value={1}>1 año</option>
+          <option value={2}>2 años</option>
+          <option value={5}>5 años</option>
+        </select>
+      </div>
+
+      <div className="dataContainer">
+        <p id="deposit">Tu deposito: ${String(opeDep(amount))}</p>
+        <p id="performance">
+          Rendimientos acumulados: ${String(accRen().toFixed(2))}
+        </p>
+        <p id="total">
+          Al finalizar tendras: ${String(operation(amount)?.toFixed(2))}
+        </p>
+      </div>
     </div>
   );
 };
