@@ -1,6 +1,6 @@
 export interface iRange {
     id: string;
-    type:string;
+    type: string;
     min: string;
     max: string;
     step: string;

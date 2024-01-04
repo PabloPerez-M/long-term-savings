@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
-// import { iParagraph } from "./interface/iParagraph";
 import TextResult from "./Paragraph";
-import SelectComponent from "./selects";
+import SelectComponent from "./Selects";
+import LabelComponent from "./Label";
+import Range from "./Range";
 
 const optionsTypeDeposit = [
-  {value: "month", text: "Cada mes"},
-  {value: "only", text: "Unica vez"},
+  { value: "month", text: "Cada mes" },
+  { value: "only", text: "Unica vez" },
 ];
 
 const optionsTime = [
-  {value: 1, text: "1 año"},
-  {value: 2, text: "2 años"},
-  {value: 5, text: "5 años"},
-]
+  { value: 1, text: "1 año" },
+  { value: 2, text: "2 años" },
+  { value: 5, text: "5 años" },
+];
 
 const Index: React.FC = () => {
   const [amount, setAmount] = useState<number>(500);
@@ -67,54 +68,32 @@ const Index: React.FC = () => {
     return Number(operation(amount) - opeDep(amount));
   };
 
-  useEffect(() => {
-    console.log(time);
-  }, [time]);
-
-  useEffect(() => {
-    console.log(amount);
-  }, [amount]);
-
-  useEffect(() => {
-    console.log(typeDeposit);
-  }, [typeDeposit]);
-
   return (
     <div className="container">
       <div className="typeContainer">
-        <SelectComponent label="Tipo de deposito: " id="typeMonetaryReturn" onChange={typeChange} value={typeDeposit} options={optionsTypeDeposit}/>
+        <SelectComponent label="Tipo de deposito: " id="typeMonetaryReturn" onChange={typeChange} value={typeDeposit} options={optionsTypeDeposit} />
       </div>
       <div className="rangeContainer">
-        <label className="labelAmount">Monto: </label>
+        <LabelComponent id="labelAmount" text="Monto: " />
         <div className="infRangeCont">
           <div className="divAmount">
-            <label id="amount">${amount}</label>
+            <LabelComponent id="labelAmount" text={amount} />
           </div>
           <div className="divMax">
-            <label id="max">$23000</label>
+            <LabelComponent id="max" text="$23000" />
           </div>
         </div>
         <div>
-          <input
-            id="range"
-            type="range"
-            min="500"
-            max="23000"
-            step="500"
-            onChange={handleChange}
-          />
+          <Range id="range" type="range" min="500" max="23000" step="500" onChange={handleChange} />
         </div>
       </div>
-
-
       <div className="timeContainer">
-        <SelectComponent label="Tiempo: "  id="selectYears" onChange={timeChange} value={time} options={optionsTime} />
+        <SelectComponent label="Tiempo: " id="selectYears" onChange={timeChange} value={time} options={optionsTime} />
       </div>
-
       <div className="dataContainer">
-        <TextResult id="deposit" text="Tu deposito: " value={opeDep(amount)}/>
-        <TextResult id="monetaryReturn" text="Rendimientos acumulados: " value={accRen()}/>
-        <TextResult id="total" text="Al finalizar tendras: " value={operation(amount)}/>
+        <TextResult id="deposit" text="Tu deposito: " value={opeDep(amount)} />
+        <TextResult id="monetaryReturn" text="Rendimientos acumulados: " value={accRen()} />
+        <TextResult id="total" text="Al finalizar tendras: " value={operation(amount)} />
       </div>
     </div>
   );

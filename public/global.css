@@ -1,4 +1,4 @@
-*{
+* {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -78,7 +78,7 @@ option {
     margin: 0 5px;
 }
 
-.labelAmount {
+#labelAmount {
     margin: 0 5px;
 }
 
@@ -144,7 +144,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
     main {
         width: auto;
         height: auto;
@@ -159,15 +159,17 @@ input[type="range"]::-webkit-slider-thumb {
         width: 90%;
         font-size: 22px;
     }
-    #typeMonetaryReturn{
+
+    #typeMonetaryReturn {
         font-size: 16px;
     }
-    #selectYears{
+
+    #selectYears {
         font-size: 16px;
     }
 }
 
-@media screen and (min-width: 576px) and (max-width: 767px){
+@media screen and (min-width: 576px) and (max-width: 767px) {
     main {
         width: auto;
         height: auto;
@@ -182,15 +184,17 @@ input[type="range"]::-webkit-slider-thumb {
         width: 85%;
         font-size: 20px;
     }
-    #typeMonetaryReturn{
+
+    #typeMonetaryReturn {
         font-size: 14px;
     }
-    #selectYears{
+
+    #selectYears {
         font-size: 14px;
     }
 }
 
-@media screen and (max-width: 575px){
+@media screen and (max-width: 575px) {
     main {
         width: auto;
         height: auto;
@@ -205,10 +209,12 @@ input[type="range"]::-webkit-slider-thumb {
         width: 80%;
         font-size: 18px;
     }
-    #typeMonetaryReturn{
+
+    #typeMonetaryReturn {
         font-size: 12px;
     }
-    #selectYears{
+
+    #selectYears {
         font-size: 12px;
     }
 }
