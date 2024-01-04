@@ -1,9 +1,11 @@
 import React from "react";
 import { iLabel } from "../../interface";
 
-const LabelComponent: React.FC<iLabel> = ({ id, text }) => {
+const LabelComponent: React.FC<iLabel> = ({ className,id, text }) => {
     return (
-        <label id={id}>{text}</label>
+        <div className={className}>
+            <label id={id}>{text}</label>
+        </div>
     );
 }
 

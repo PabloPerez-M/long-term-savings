@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import TextResult from "./Paragraph/Paragraph";
-import SelectComponent from "./Select/Selects";
-import LabelComponent from "./Label/Label";
-import Range from "./Range/Range";
-import { optionsTypeDeposit } from "../constant/constants";
-import { optionsTime } from "../constant/constants";
+import TextResult from "../Paragraph/Paragraph";
+import SelectComponent from "../Select/Selects";
+import LabelComponent from "../Label/Label";
+import Range from "../Range/Range";
+import { optionsTypeDeposit } from "../../constant/constants";
+import { optionsTime } from "../../constant/constants";
 // import { infoText } from "../constant/constants";
 
 
@@ -63,26 +63,16 @@ const Layout: React.FC = () => {
 
   return (
     <div className="container">
-      <div className="typeContainer">
-        <SelectComponent label="Tipo de deposito: " id="typeMonetaryReturn" onChange={typeChange} value={typeDeposit} options={optionsTypeDeposit} />
-      </div>
+        <SelectComponent className="typeContainer" label="Tipo de deposito: " id="typeMonetaryReturn" onChange={typeChange} value={typeDeposit} options={optionsTypeDeposit} />
       <div className="rangeContainer">
-        <LabelComponent id="labelAmount" text="Monto: " />
+        <LabelComponent className="labelAmount" id="labelAmount" text="Monto: " />
         <div className="infRangeCont">
-          <div className="divAmount">
-            <LabelComponent id="labelAmount" text={amount} />
-          </div>
-          <div className="divMax">
-            <LabelComponent id="max" text="$23000" />
-          </div>
+            <LabelComponent className="divAmount" id="labelAmount" text={amount} />
+            <LabelComponent className="divMax" id="max" text="$23000" />
         </div>
-        <div>
           <Range id="range" type="range" min="500" max="23000" step="500" onChange={handleChange} />
-        </div>
       </div>
-      <div className="timeContainer">
-        <SelectComponent label="Tiempo: " id="selectYears" onChange={timeChange} value={time} options={optionsTime} />
-      </div>
+        <SelectComponent className="timeContainer" label="Tiempo: " id="selectYears" onChange={timeChange} value={time} options={optionsTime} />
       <div className="dataContainer">
         {/* infoText.map((paragraph) => {
 

@@ -1,0 +1,9 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.dataContainer {
+    width: 98%;
+    align-items: flex-start;
+
+}

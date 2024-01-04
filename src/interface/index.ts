@@ -1,4 +1,5 @@
 export interface iLabel{
+    className:string;
     id: string;
     text: string | number;
 }
@@ -19,6 +20,7 @@ export interface iRange {
 }
 
 export interface iSelect{
+    className:string;
     label: string;
     id: string;
     onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;

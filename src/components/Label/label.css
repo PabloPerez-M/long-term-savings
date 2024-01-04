@@ -1,0 +1,18 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+#labelAmount {
+    margin: 0 5px;
+}
+
+.divAmount {
+    width: 40%;
+}
+
+.divMax {
+
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
