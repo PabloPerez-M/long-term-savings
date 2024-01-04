@@ -20,13 +20,7 @@ Long-term-saving requires:
 -[React](https://react.dev/learn/installation) v18.2+ to run.
 -[Webpack](https://webpack.js.org/guides/typescript/) v5.89+ to run.
 
-Create a folder with name dist, install the dependencies, and devDependencies and start the server.
-
-You must create folder dist...
-```sh
-cd long-term-saving
-mkdir dist
-```
+Install the dependencies, and devDependencies and start the server.
 
 You must install the dependencies...
 ```sh
