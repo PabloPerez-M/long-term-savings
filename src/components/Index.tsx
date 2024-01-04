@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { iParagraph } from "./interface/iParagraph";
+import TextResult from "./Paragraph";
 
-const Range: React.FC = () => {
+const Index: React.FC = () => {
   const [amount, setAmount] = useState<number>(500);
   const [time, setTime] = useState<number>(1);
   const [typeDeposit, setTypeDeposit] = useState<string>("month");
@@ -109,16 +111,12 @@ const Range: React.FC = () => {
       </div>
 
       <div className="dataContainer">
-        <p id="deposit">Tu deposito: ${String(opeDep(amount))}</p>
-        <p id="monetaryReturn">
-          Rendimientos acumulados: ${String(accRen().toFixed(2))}
-        </p>
-        <p id="total">
-          Al finalizar tendras: ${String(operation(amount)?.toFixed(2))}
-        </p>
+        <TextResult id="deposit" text="Tu deposito: " value={opeDep(amount)}/>
+        <TextResult id="monetaryReturn" text="Rendimientos acumulados: " value={accRen()}/>
+        <TextResult id="total" text="Al finalizar tendras: " value={operation(amount)}/>
       </div>
     </div>
   );
 };
 
-export default Range;
+export default Index;
