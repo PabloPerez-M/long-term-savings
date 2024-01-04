@@ -1,5 +1,5 @@
 import React from "react";
-import { iRange } from "./interface/iRange";
+import { iRange } from "../../interface";
 
 const Range: React.FC<iRange> = ({ id, type, min, max, step, onChange }) => {
     return (

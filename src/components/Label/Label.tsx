@@ -1,7 +1,7 @@
 import React from "react";
-import { ilabel } from "./interface/iLabel";
+import { iLabel } from "../../interface";
 
-const LabelComponent: React.FC<ilabel> = ({ id, text }) => {
+const LabelComponent: React.FC<iLabel> = ({ id, text }) => {
     return (
         <label id={id}>{text}</label>
     );

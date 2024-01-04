@@ -1,13 +1,10 @@
-import Index from "./components/Index";
+import Layout from "./components";
 
 export default function App() {
     return (
         <main className="main">
             <h1 className="title">Simulador de rendimiento</h1>
-            <br />
-            <Index />
-            <br />
-            <br />
+            <Layout />
         </main>
     );
 }

@@ -1,21 +1,14 @@
 import React, { useEffect, useState } from "react";
-import TextResult from "./Paragraph";
-import SelectComponent from "./Selects";
-import LabelComponent from "./Label";
-import Range from "./Range";
+import TextResult from "./Paragraph/Paragraph";
+import SelectComponent from "./Select/Selects";
+import LabelComponent from "./Label/Label";
+import Range from "./Range/Range";
+import { optionsTypeDeposit } from "../constant/constants";
+import { optionsTime } from "../constant/constants";
+// import { infoText } from "../constant/constants";
 
-const optionsTypeDeposit = [
-  { value: "month", text: "Cada mes" },
-  { value: "only", text: "Unica vez" },
-];
 
-const optionsTime = [
-  { value: 1, text: "1 año" },
-  { value: 2, text: "2 años" },
-  { value: 5, text: "5 años" },
-];
-
-const Index: React.FC = () => {
+const Layout: React.FC = () => {
   const [amount, setAmount] = useState<number>(500);
   const [time, setTime] = useState<number>(1);
   const [typeDeposit, setTypeDeposit] = useState<string>("month");
@@ -91,6 +84,10 @@ const Index: React.FC = () => {
         <SelectComponent label="Tiempo: " id="selectYears" onChange={timeChange} value={time} options={optionsTime} />
       </div>
       <div className="dataContainer">
+        {/* infoText.map((paragraph) => {
+
+        }) */}
+
         <TextResult id="deposit" text="Tu deposito: " value={opeDep(amount)} />
         <TextResult id="monetaryReturn" text="Rendimientos acumulados: " value={accRen()} />
         <TextResult id="total" text="Al finalizar tendras: " value={operation(amount)} />
@@ -99,4 +96,4 @@ const Index: React.FC = () => {
   );
 };
 
-export default Index;
+export default Layout;
