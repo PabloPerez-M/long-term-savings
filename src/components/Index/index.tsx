@@ -6,13 +6,11 @@ import LabelComponent from "../Label/Label";
 import Range from "../Range/Range";
 import { optionsTypeDeposit } from "../../constant/constants";
 import { optionsTime } from "../../constant/constants";
-// import { infoText } from "../constant/constants";
-
 
 const Layout: React.FC = () => {
   const [amount, setAmount] = useState<number>(500);
   const [time, setTime] = useState<number>(1);
-  const [typeDeposit, setTypeDeposit] = useState<string>("month");
+   const [typeDeposit, setTypeDeposit] = useState<string>("month");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newAmount = parseInt(event.target.value);
@@ -75,10 +73,6 @@ const Layout: React.FC = () => {
       </div>
         <SelectComponent className="timeContainer" label="Tiempo: " id="selectYears" onChange={timeChange} value={time} options={optionsTime} />
       <div className="dataContainer">
-        {/* infoText.map((paragraph) => {
-
-        }) */}
-
         <TextResult id="deposit" text="Tu deposito: " value={opeDep(amount)} />
         <TextResult id="monetaryReturn" text="Rendimientos acumulados: " value={accRen()} />
         <TextResult id="total" text="Al finalizar tendras: " value={operation(amount)} />
