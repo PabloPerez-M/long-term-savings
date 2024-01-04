@@ -1,5 +1,6 @@
 import React from "react";
 import { iSelect } from "../../interface";
+import "./select.css";
 
 const SelectComponent: React.FC<iSelect> = ({className, id, onChange, value, options, label }) => {
 

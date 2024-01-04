@@ -1,5 +1,6 @@
 import React from "react";
 import { iLabel } from "../../interface";
+import "./label.css";
 
 const LabelComponent: React.FC<iLabel> = ({ className,id, text }) => {
     return (

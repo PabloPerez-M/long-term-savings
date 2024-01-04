@@ -1,6 +1,6 @@
-* {
+/* * {
     font-family: 'Poppins', sans-serif;
-}
+} */
 
 select {
     background-color: rgba(196, 148, 241, 0.606);
@@ -48,4 +48,34 @@ option {
     font-size: 18px;
     width: 30%;
     box-shadow: 0.5px 0.5px 1px rgb(47, 32, 70);
+}
+
+@media screen and (min-width: 768px) {
+    #typeMonetaryReturn {
+        font-size: 16px;
+    }
+
+    #selectYears {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    #typeMonetaryReturn {
+        font-size: 14px;
+    }
+
+    #selectYears {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #typeMonetaryReturn {
+        font-size: 12px;
+    }
+
+    #selectYears {
+        font-size: 12px;
+    }
 }

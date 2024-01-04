@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import "./index.css";
 import TextResult from "../Paragraph/Paragraph";
 import SelectComponent from "../Select/Selects";
 import LabelComponent from "../Label/Label";

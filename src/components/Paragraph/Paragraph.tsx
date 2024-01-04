@@ -1,5 +1,6 @@
 import React from "react";
 import { iParagraph } from "../../interface";
+import "./paragraph.css";
 
 const TextResult: React.FC<iParagraph> = ({ value, text, id }) => {
     return (
