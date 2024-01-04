@@ -1,6 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { iParagraph } from "./interface/iParagraph";
+// import { iParagraph } from "./interface/iParagraph";
 import TextResult from "./Paragraph";
+import SelectComponent from "./selects";
+
+const optionsTypeDeposit = [
+  {value: "month", text: "Cada mes"},
+  {value: "only", text: "Unica vez"},
+];
+
+const optionsTime = [
+  {value: 1, text: "1 año"},
+  {value: 2, text: "2 años"},
+  {value: 5, text: "5 años"},
+]
 
 const Index: React.FC = () => {
   const [amount, setAmount] = useState<number>(500);
@@ -70,13 +82,7 @@ const Index: React.FC = () => {
   return (
     <div className="container">
       <div className="typeContainer">
-        <label htmlFor="typeMonetaryReturn">
-          Tipo de deposito: {" "}
-        </label>
-        <select id="typeMonetaryReturn" onChange={typeChange} value={typeDeposit}>
-          <option value="month">Cada mes</option>
-          <option value="only">Unica vez</option>
-        </select>
+        <SelectComponent label="Tipo de deposito: " id="typeMonetaryReturn" onChange={typeChange} value={typeDeposit} options={optionsTypeDeposit}/>
       </div>
       <div className="rangeContainer">
         <label className="labelAmount">Monto: </label>
@@ -102,12 +108,7 @@ const Index: React.FC = () => {
 
 
       <div className="timeContainer">
-        <label htmlFor="selectYears">Tiempo: </label>
-        <select id="selectYears" onChange={timeChange} value={time}>
-          <option value={1}>1 año</option>
-          <option value={2}>2 años</option>
-          <option value={5}>5 años</option>
-        </select>
+        <SelectComponent label="Tiempo: "  id="selectYears" onChange={timeChange} value={time} options={optionsTime} />
       </div>
 
       <div className="dataContainer">
